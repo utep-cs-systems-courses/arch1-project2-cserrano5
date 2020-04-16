@@ -6,7 +6,7 @@
 #define MAX_PRD 4000
 #define MIN_PRD 1000
 
-static unsigned intt prd = 1000;
+static unsigned int prd = 1000;
 static signed int rate = 200;
 
 //taken from buzzer demo code
