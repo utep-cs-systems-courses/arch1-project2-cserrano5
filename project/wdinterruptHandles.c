@@ -19,16 +19,17 @@ void decisec() //desisecond timer
 void
 __interrupt_vec(WDT_VECTOR) WDT()
 {
-  static char sec_count = 0, deci_count = 0; //second count and decisecond count
+  static char sec_count = 0;  //second count
+  static char deci_count = 0; //  decisecond count
 
 
   if (++sec_count == 250)
     sec_count = 0;
-  if (++deci_count = 25)
+  if (++deci_count == 25)
     {
       switch_interrupt_handler();
       buzzer_adv_freq();
-      desi_count = 0;
+      deci_count = 0;
     }
   led_update();
 }
