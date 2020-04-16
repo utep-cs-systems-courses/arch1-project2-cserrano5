@@ -11,10 +11,12 @@ void main(void)
   configureClocks();
   switch_init();
 
+  
   led_init();
   led_update(); //For button press
 
   buzzer_init(); //For button press
 
+  enableWDTInterrupts();
   or_sr(0x18); //CPU off, GIE on
 }

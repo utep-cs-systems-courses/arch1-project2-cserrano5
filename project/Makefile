@@ -13,14 +13,14 @@ CC		= msp430-elf-gcc
 AS		= msp430-elf-as
 
 
-all: button.elf
+all: buttonMain.elf
 
-button.elf: ${COMMON_OBJECTS} p1_interrupt_handler.o wdinterruptHandles.o led.o switches.o buttonMain.o buzzer.o state_machine.s ../lib/libTimer.a 
+buttonMain.elf: ${COMMON_OBJECTS} p1_interrupt_handler.o wdinterruptHandles.o led.o switches.o buttonMain.o buzzer.o state_machine.s ../lib/libTimer.a 
 
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
-load: button.elf
-	msp430loader.sh button.elf
+load: buttonMain.elf
+	msp430loader.sh buttonMain.elf
 
 clean:
 	rm -f *.o *.elf *.c~ *.h~

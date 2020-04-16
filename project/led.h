@@ -7,6 +7,7 @@
 #define LED_GREEN BIT6 //P1.6
 #define LEDS (BIT0 | BIT6)
 
+void led_test();
 void led_init(); //init LEDS, demo code
 void led_update();
 
